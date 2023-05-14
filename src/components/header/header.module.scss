@@ -1,0 +1,34 @@
+@import '../../styles/style.scss';
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: $color-white;
+  .wrapper {
+    display: flex;
+    width: 100%;
+    height: 84px;
+    max-width: $max-width;
+    padding: 24px 0;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Poppins';
+    @include font(24px, 36px, 600);
+    &__ico {
+      width: 27px;
+      height: 27px;
+      background: url('../../assets/logo.svg') no-repeat;
+      background-size: contain;
+    }
+  }
+  .menu {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin-left: 280px;
+    font-family: 'Inter';
+  }
+}

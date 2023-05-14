@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import s from './App.module.scss';
+import Header from './components/header/header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Favorite from './components/favorite/favorite';
+import MainPage from './components/mainPage/mainPage';
+import { MantineProvider } from '@mantine/core';
+import { fetchCatalog } from './service/superjob';
+import { ICatalog } from './service/models';
 
 function App() {
+  const [catalog, setCatalog] = useState<ICatalog[]>([]);
+  useEffect(() => {
+    const getCatalog = async () => {
+      const data = await fetchCatalog();
+      setCatalog(data);
+    };
+    getCatalog();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <BrowserRouter>
+        <div className={s.App}>
+          <Header></Header>
+          <div className={s.App__main}>
+            <Routes>
+              <Route path="/" element={<MainPage catalog={catalog} />}></Route>
+              <Route path="favorite" element={<Favorite />}></Route>
+            </Routes>
+          </div>
+        </div>
+      </BrowserRouter>
+    </MantineProvider>
   );
 }
 

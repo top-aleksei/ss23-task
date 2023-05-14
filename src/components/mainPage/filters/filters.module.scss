@@ -1,0 +1,30 @@
+@import '../../../styles/style.scss';
+
+.filters {
+  background-color: $color-white;
+  width: 315px;
+  border: 1px solid $color-grey200;
+  border-radius: 12px;
+  padding: 20px;
+  &__button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    color: $color-white;
+    background-color: $color-blue500;
+    border: none;
+    border-radius: 8px;
+  }
+}
+
+.input {
+  &__control {
+    border: none;
+  }
+}
+
+.mantine-NumberInput-control {
+  font-family: 'Inter';
+  @include font(14px, 21px, 500);
+  background-color: red;
+}

@@ -1,0 +1,15 @@
+@import '../../styles/style.scss';
+
+.page {
+  max-width: $max-width;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
