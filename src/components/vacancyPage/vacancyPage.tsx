@@ -5,6 +5,7 @@ import { IVacancy } from '../../service/models';
 import s from './vacancyPage.module.scss';
 import VacancyTitle from './vacancyTitle/vacancyTitle';
 import VacancyBody from './vacancyBody/vacancyBody';
+import Loader from '../loader/loader';
 
 function VacancyPage() {
   const { id } = useParams();
@@ -25,7 +26,7 @@ function VacancyPage() {
       </div>
     );
   } else {
-    return <div></div>;
+    return <Loader />;
   }
 }
 

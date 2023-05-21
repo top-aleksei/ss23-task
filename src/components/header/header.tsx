@@ -1,11 +1,17 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import s from './header.module.scss';
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <header className={s.header}>
       <div className={s.wrapper}>
-        <div className={s.logo}>
+        <div className={s.logo} onClick={handleLogoClick}>
           <div className={s.logo__ico} />
           <span>Jobored</span>
         </div>

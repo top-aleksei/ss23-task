@@ -4,6 +4,7 @@ import { IVacancy } from '../../../../service/models';
 import s from './favItem.module.scss';
 import { useAppContext } from '../../../../reducer/filtersContext';
 import { removeFromFavorite } from '../../../../reducer/actions';
+import { createSalaryDescription } from '../../../../utils/createSalaryText';
 
 function FavItem(props: any) {
   const { dispatch } = useAppContext();
@@ -12,7 +13,6 @@ function FavItem(props: any) {
 
   const handleCardClick = () => {
     navigate(`vacancy/${item.id}`);
-    console.log('container');
   };
 
   const handleFavorite = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -31,8 +31,7 @@ function FavItem(props: any) {
       </div>
       <div className={s.item__main}>
         <span className={s.salary}>
-          з/п {item.payment_from} {item.payment_to ? `- ${item.payment_to}` : ''}
-          {item.currency}
+          з/п {createSalaryDescription(item.payment_from, item.payment_to, item.currency)}
         </span>
         <span className={s.dot}> • </span>
         <span>{item.type_of_work.title}</span>

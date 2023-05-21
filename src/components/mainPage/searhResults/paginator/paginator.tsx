@@ -15,7 +15,6 @@ function Paginator() {
   const changePage = async (e: number) => {
     dispatch(setFetchActivity(true));
     dispatch(setPage(e));
-    console.log(state.filtersState.page);
     const data = await fetchVacancies(state.filtersState, e);
     dispatch(updateVacancies(data));
     dispatch(setFetchActivity(false));

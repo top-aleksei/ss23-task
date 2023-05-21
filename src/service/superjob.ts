@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { getAccessTokenLS } from '../localStorage/localStorage';
 import { SECRET_KEY, authParams, endpoints } from './config';
 import { IToken, IVacancy } from './models';
 import { ICatalog, IFetchedVacancies } from './models';
@@ -46,6 +47,7 @@ export async function fetchVacancies(
         headers: {
           'x-secret-key': SECRET_KEY,
           'X-Api-App-Id': authParams.client_secret,
+          Authorization: `Bearer ${getAccessTokenLS().access_token}`,
         },
       }
     );
@@ -62,6 +64,7 @@ export async function fetchExactVacancy(id: string) {
       headers: {
         'x-secret-key': SECRET_KEY,
         'X-Api-App-Id': authParams.client_secret,
+        Authorization: `Bearer ${getAccessTokenLS().access_token}`,
       },
     });
     const vacancy: IVacancy = await response.json();

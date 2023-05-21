@@ -18,6 +18,7 @@
     font-family: 'Poppins', sans-serif;
     @include font(24px, 36px, 600);
     letter-spacing: -0.02em;
+    cursor: pointer;
     &__ico {
       width: 30px;
       height: 30px;

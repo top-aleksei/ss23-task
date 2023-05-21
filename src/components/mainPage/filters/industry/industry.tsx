@@ -29,8 +29,6 @@ function IndustryBlock(props: { catalog: ICatalog[] }) {
         data={selectData}
         placeholder="Выберите отрасль"
         classNames={{ input: s.input, rightSection: s.rightSec, item: s.item }}
-        // size="md"
-        // styles={{ rightSection: { pointerEvents: 'none' }, item: { whiteSpace: 'initial' } }}
         onChange={(e) => dispatch(updateIndustry(e || ''))}
         onDropdownOpen={() => setIsOpened(true)}
         onDropdownClose={() => setIsOpened(false)}

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { IVacancy } from '../../../../service/models';
 import s from './searchItem.module.scss';
 import { useEffect, useState } from 'react';
@@ -7,6 +7,7 @@ import { useAppContext } from '../../../../reducer/filtersContext';
 import { addToFavorite, removeFromFavorite } from '../../../../reducer/actions';
 
 import { IState } from '../../../../reducer/models';
+import { createSalaryDescription } from '../../../../utils/createSalaryText';
 
 function SearchItem(props: any) {
   const { state, dispatch } = useAppContext();
@@ -22,7 +23,6 @@ function SearchItem(props: any) {
 
   const handleCardClick = () => {
     navigate(`vacancy/${item.id}`);
-    console.log('container');
   };
 
   const hadleToggleFavorite = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -45,8 +45,7 @@ function SearchItem(props: any) {
       </div>
       <div className={s.item__main}>
         <span className={s.salary}>
-          з/п {item.payment_from} {item.payment_to ? `- ${item.payment_to}` : ''}
-          {item.currency}
+          з/п {createSalaryDescription(item.payment_from, item.payment_to, item.currency)}
         </span>
         <span className={s.dot}> • </span>
         <span>{item.type_of_work.title}</span>

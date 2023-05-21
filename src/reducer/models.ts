@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { IFetchedVacancies, IVacancy } from '../service/models';
+import { IVacancy } from '../service/models';
 
 export interface IState {
   filtersState: {
@@ -14,6 +14,7 @@ export interface IState {
     total: number;
   };
   favoriteState: IVacancy[];
+  isFetching: boolean;
 }
 
 export interface IAction {

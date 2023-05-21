@@ -5,6 +5,7 @@ import { IVacancy } from '../../../service/models';
 import s from './vacancyTitle.module.scss';
 import { IState } from '../../../reducer/models';
 import { addToFavorite, removeFromFavorite } from '../../../reducer/actions';
+import { createSalaryDescription } from '../../../utils/createSalaryText';
 
 function VacancyTitle(props: any) {
   const item: IVacancy = props.item;
@@ -36,8 +37,7 @@ function VacancyTitle(props: any) {
       </div>
       <div className={s.item__main}>
         <span className={s.salary}>
-          з/п {item.payment_from} {item.payment_to ? `- ${item.payment_to}` : ''}
-          {item.currency}
+          з/п {createSalaryDescription(item.payment_from, item.payment_to, item.currency)}
         </span>
         <span className={s.dot}> • </span>
         <span>{item.type_of_work.title}</span>
