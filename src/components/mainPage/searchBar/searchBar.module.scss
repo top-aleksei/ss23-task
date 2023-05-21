@@ -13,6 +13,11 @@
     @include font(14px, 21px, 500);
     font-family: 'Inter', sans-serif;
     cursor: pointer;
+    @include media-small-mobile {
+      @include font(12px, 21px, 500);
+      width: 63px;
+      height: 26px;
+    }
   }
 }
 
@@ -20,14 +25,26 @@
   &__input {
     height: 48px;
     border-radius: 8px;
+    @include media-small-mobile {
+      padding-left: 10px !important;
+      height: 42px;
+    }
     &::placeholder {
       @include font(14px, 21px, 400);
       font-family: 'Inter', sans-serif;
       color: $color-gray500;
+      @include media-small-mobile {
+        @include font(11px, 16px, 400);
+      }
     }
   }
   &__icon {
     padding-left: 7px;
     padding-top: 3px;
+    @include media-small-mobile {
+      padding-left: 0;
+      display: none;
+      // padding-top: 3px;
+    }
   }
 }

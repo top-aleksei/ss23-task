@@ -13,22 +13,45 @@
 }
 
 .custom {
+  &__root {
+    @include media-mobile {
+      flex-grow: 1;
+    }
+  }
   &__input {
     height: 42px;
     border-radius: 8px;
+    @include media-mobile {
+      height: 36px;
+    }
   }
 
   &__up {
     padding-top: 5px;
     border: none;
     cursor: pointer;
+    @include media-mobile {
+      padding-top: 2px;
+    }
   }
   &__down {
     padding-bottom: 5px;
     border: none;
     cursor: pointer;
+    @include media-mobile {
+      padding-top: 2px;
+    }
   }
   &__rightSection {
     margin-right: 6px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  @include media-mobile {
+    flex-direction: row;
   }
 }

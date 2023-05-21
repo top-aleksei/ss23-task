@@ -13,6 +13,14 @@
   padding: 23px 24px;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
+  @include media-small-desktop {
+    gap: 9px;
+    padding: 15px;
+  }
+  @include media-small-mobile {
+    gap: 7px;
+    padding: 10px;
+  }
   &__header {
     width: 100%;
     overflow: hidden;
@@ -27,6 +35,13 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      @include media-small-desktop {
+        white-space: normal;
+        @include font(18px, 20px, 600);
+      }
+      @include media-small-mobile {
+        @include font(15px, 16px, 600);
+      }
     }
   }
   &__main {
@@ -34,8 +49,20 @@
     display: flex;
     gap: 12px;
     align-items: center;
+    @include media-small-desktop {
+      @include font(14px, 16px, 400);
+    }
+    @include media-small-mobile {
+      flex-direction: column;
+      @include font(11px, 14px, 400);
+      gap: 4px;
+      align-items: flex-start;
+    }
     .dot {
       color: $color-gray600;
+      @include media-small-mobile {
+        display: none;
+      }
     }
   }
   &__footer {
@@ -44,6 +71,13 @@
     gap: 12px;
     @include font(16px, 19px, 400);
     font-family: 'Inter', sans-serif;
+    @include media-small-desktop {
+      @include font(14px, 16px, 400);
+    }
+    @include media-small-mobile {
+      gap: 6px;
+      @include font(12px, 14px, 400);
+    }
   }
 }
 
@@ -55,6 +89,11 @@
   width: 20px;
   height: 20px;
   background: url('../../../../assets/location.svg');
+  @include media-small-mobile {
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+  }
 }
 .star {
   border: none;
@@ -62,11 +101,25 @@
   height: 22px;
   background: url('../../../../assets/star.svg') no-repeat;
   margin-top: 1px;
+  @include media-small-mobile {
+    width: 19px;
+    height: 19px;
+    background-size: contain;
+  }
   &-fav {
     border: none;
     width: 22px;
     height: 22px;
     background: url('../../../../assets/starFav.svg') no-repeat;
     margin-top: 1px;
+    @include media-small-mobile {
+      width: 19px;
+      height: 19px;
+      background-size: contain;
+    }
   }
+}
+
+.open {
+  position: absolute;
 }

@@ -36,10 +36,11 @@ function App() {
   };
 
   useEffect(() => {
-    checkToken();
+    checkToken().then(() => {
+      getVacancies();
+    });
     getFavoriteVacancies();
     getCatalog();
-    getVacancies();
   }, []);
 
   useEffect(() => {

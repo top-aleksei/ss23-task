@@ -5,7 +5,10 @@
   min-height: 100vh;
   &__main {
     padding: 40px 0;
-    width: $max-width;
+    max-width: $max-width;
     margin: 0 auto;
+    @include media-small-desktop {
+      padding: 20px 10px;
+    }
   }
 }

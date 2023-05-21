@@ -11,6 +11,7 @@ function SalaryBlock() {
     controlUp: s.custom__up,
     controlDown: s.custom__down,
     rightSection: s.custom__rightSection,
+    root: s.custom__root,
   };
 
   const handleInput = (
@@ -32,22 +33,24 @@ function SalaryBlock() {
   return (
     <div className={s.salary}>
       <span className={s.title}>Оклад</span>
-      <NumberInput
-        classNames={customInputClass}
-        placeholder="От"
-        value={state.filtersState.salaryFrom}
-        min={0}
-        onInput={(e) => handleInput(e, updateSalaryFrom)}
-        onChange={(e) => handleChange(e, updateSalaryFrom)}
-      />
-      <NumberInput
-        classNames={customInputClass}
-        placeholder="До"
-        value={state.filtersState.salaryTo}
-        min={0}
-        onInput={(e) => handleInput(e, updateSalaryTo)}
-        onChange={(e) => handleChange(e, updateSalaryTo)}
-      />
+      <div className={s.container}>
+        <NumberInput
+          classNames={customInputClass}
+          placeholder="От"
+          value={state.filtersState.salaryFrom}
+          min={0}
+          onInput={(e) => handleInput(e, updateSalaryFrom)}
+          onChange={(e) => handleChange(e, updateSalaryFrom)}
+        />
+        <NumberInput
+          classNames={customInputClass}
+          placeholder="До"
+          value={state.filtersState.salaryTo}
+          min={0}
+          onInput={(e) => handleInput(e, updateSalaryTo)}
+          onChange={(e) => handleChange(e, updateSalaryTo)}
+        />
+      </div>
     </div>
   );
 }

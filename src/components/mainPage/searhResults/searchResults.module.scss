@@ -1,5 +1,10 @@
+@import '../../../styles/style.scss';
+
 .list {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  @include media-small-desktop {
+    gap: 12px;
+  }
 }

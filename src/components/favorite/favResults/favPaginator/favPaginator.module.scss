@@ -1,5 +1,20 @@
+@import '../../../../styles/style.scss';
+
 .container {
   margin-top: 104px;
   display: flex;
   justify-content: center;
+  @include media-small-desktop {
+    margin-top: 30px;
+  }
+  @include media-small-mobile {
+    margin-top: 20px;
+  }
+}
+
+.control {
+  min-width: 22px;
+  height: 22px;
+  @include font(12px, 14px, 400);
+  padding: 0 3px;
 }

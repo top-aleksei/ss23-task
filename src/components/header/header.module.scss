@@ -10,6 +10,10 @@
     height: 84px;
     max-width: $max-width;
     padding: 24px 0;
+    @include media-small-desktop {
+      padding: 0 10px;
+      height: 64px;
+    }
   }
   .logo {
     display: flex;
@@ -19,11 +23,19 @@
     @include font(24px, 36px, 600);
     letter-spacing: -0.02em;
     cursor: pointer;
+    @include media-small-mobile {
+      @include font(20px, 26px, 600);
+      gap: 7px;
+    }
     &__ico {
       width: 30px;
       height: 30px;
       background: url('../../assets/logo.svg') no-repeat;
       background-size: contain;
+      @include media-mobile {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
   .menu {
@@ -32,6 +44,19 @@
     align-items: center;
     margin-left: 281px;
     font-family: 'Inter', sans-serif;
+    @include media-small-desktop {
+      margin-left: auto;
+    }
+    @include media-mobile {
+      gap: 25px;
+    }
+    @include media-small-mobile {
+      margin-left: 0;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      flex-grow: 1;
+    }
   }
 }
 
@@ -45,5 +70,8 @@
     font-family: 'Inter', sans-serif;
     @include font(16px, 20px, 500);
     color: $color-blue500;
+  }
+  @include media-small-mobile {
+    @include font(14px, 18px, 500);
   }
 }

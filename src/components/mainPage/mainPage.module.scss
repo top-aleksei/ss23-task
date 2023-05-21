@@ -5,6 +5,12 @@
   display: flex;
   justify-content: center;
   gap: 28px;
+  @include media-small-desktop {
+    gap: 15px;
+  }
+  @include media-mobile {
+    flex-direction: column;
+  }
 }
 
 .main {

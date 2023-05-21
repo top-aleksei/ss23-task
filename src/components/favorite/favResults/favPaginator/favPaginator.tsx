@@ -9,7 +9,12 @@ function FavPaginator(props: any) {
 
   return (
     <div className={s.container}>
-      <Pagination total={totalPages} value={props.page} onChange={(e) => props.setPage(e)} />
+      <Pagination
+        total={totalPages}
+        value={props.page}
+        onChange={(e) => props.setPage(e)}
+        classNames={{ control: s.control }}
+      />
     </div>
   );
 }

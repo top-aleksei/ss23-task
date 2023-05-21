@@ -1,6 +1,11 @@
+@import '../../../styles/style.scss';
+
 .list {
   height: 596px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  @include media-mobile {
+    height: auto;
+  }
 }

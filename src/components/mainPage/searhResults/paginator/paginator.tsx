@@ -26,6 +26,7 @@ function Paginator() {
         total={totalPages}
         value={state.filtersState.page}
         onChange={(e) => changePage(e)}
+        classNames={{ control: s.control }}
       />
     </div>
   );
