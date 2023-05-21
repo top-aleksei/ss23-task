@@ -1,0 +1,32 @@
+@import '../../../styles/style.scss';
+
+.search {
+  &__button {
+    position: absolute;
+    right: 12px;
+    width: 83px;
+    height: 32px;
+    border-radius: 8px;
+    color: $color-white;
+    background-color: $color-blue500;
+    border: none;
+    @include font(14px, 21px, 500);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.custom {
+  &__input {
+    height: 48px;
+    border-radius: 8px;
+    &::placeholder {
+      @include font(14px, 21px, 400);
+      font-family: 'Inter', sans-serif;
+      color: $color-gray500;
+    }
+  }
+  &__icon {
+    padding-left: 7px;
+    padding-top: 3px;
+  }
+}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import s from './header.module.scss';
 
 function Header() {
@@ -10,10 +10,22 @@ function Header() {
           <span>Jobored</span>
         </div>
         <div className={s.menu}>
-          <Link to="/">Поиск вакансий</Link>
-          <Link to="/favorite">Избранное</Link>
-          {/* <span>Поиск вакансий</span>
-          <span>Избранное</span> */}
+          <NavLink
+            to="/"
+            className={({ isActive }) => {
+              return isActive ? s.link__active : s.link;
+            }}
+          >
+            Поиск Вакансий
+          </NavLink>
+          <NavLink
+            to="/favorite"
+            className={({ isActive }) => {
+              return isActive ? s.link__active : s.link;
+            }}
+          >
+            Избранное
+          </NavLink>
         </div>
       </div>
     </header>

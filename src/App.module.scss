@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   background-color: $color-background;
-  height: 100vh;
+  min-height: 100vh;
   &__main {
     padding: 40px 0;
     width: $max-width;

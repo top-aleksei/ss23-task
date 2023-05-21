@@ -1,11 +1,18 @@
 @import '../../../styles/style.scss';
 
 .filters {
-  background-color: $color-white;
   width: 315px;
-  border: 1px solid $color-grey200;
+  max-height: 360px;
+  flex-shrink: 0;
+  border: 1px solid $color-gray200;
+  background-color: $color-white;
   border-radius: 12px;
-  padding: 20px;
+  padding: 20px 19px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 31px;
+  }
   &__button {
     width: 100%;
     height: 40px;
@@ -14,17 +21,24 @@
     background-color: $color-blue500;
     border: none;
     border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    @include font(14px, 21px, 500);
   }
-}
-
-.input {
-  &__control {
-    border: none;
+  &__title {
+    @include font(20px, 20px, 700);
+    font-family: 'Inter', sans-serif;
   }
-}
-
-.mantine-NumberInput-control {
-  font-family: 'Inter';
-  @include font(14px, 21px, 500);
-  background-color: red;
+  &__reset {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    @include font(14px, 20px, 500);
+    font-family: 'Inter', sans-serif;
+    color: $color-gray500;
+  }
+  &__ico {
+    width: 16px;
+    height: 16px;
+    background: url('../../../assets/cross.svg');
+  }
 }

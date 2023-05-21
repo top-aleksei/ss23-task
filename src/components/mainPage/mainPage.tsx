@@ -8,12 +8,9 @@ function MainPage(props: { catalog: ICatalog[] }) {
   return (
     <div className={s.page}>
       <Filters catalog={props.catalog} />
-      {/* <div className={s.filters}>filters</div> */}
       <div className={s.main}>
         <SearchBar />
         <SearchResults />
-        sd
-        {/* <div className={s.vacancies}>vasc</div> */}
       </div>
     </div>
   );

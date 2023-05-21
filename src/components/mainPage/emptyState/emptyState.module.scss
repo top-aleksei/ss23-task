@@ -1,0 +1,27 @@
+@import '../../../styles/style.scss';
+
+.page {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.image {
+  width: 240px;
+  height: 230px;
+  margin-bottom: 8px;
+  background: url('../../../assets/emptyFav.svg') no-repeat;
+}
+
+.text {
+  width: 100%;
+  @include font(18px, 20px, 600);
+  font-family: 'Inter', sans-serif;
+  color: $color-gray900;
+  letter-spacing: 0.16rem;
+}

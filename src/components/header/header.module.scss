@@ -15,11 +15,12 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     @include font(24px, 36px, 600);
+    letter-spacing: -0.02em;
     &__ico {
-      width: 27px;
-      height: 27px;
+      width: 30px;
+      height: 30px;
       background: url('../../assets/logo.svg') no-repeat;
       background-size: contain;
     }
@@ -28,7 +29,20 @@
     display: flex;
     gap: 60px;
     align-items: center;
-    margin-left: 280px;
-    font-family: 'Inter';
+    margin-left: 281px;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.link {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  @include font(16px, 20px, 400);
+  color: $color-black;
+  &__active {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    @include font(16px, 20px, 500);
+    color: $color-blue500;
   }
 }

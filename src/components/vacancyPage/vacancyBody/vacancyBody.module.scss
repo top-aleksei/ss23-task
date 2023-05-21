@@ -1,0 +1,29 @@
+@import '../../../styles/style.scss';
+
+.item {
+  width: 100%;
+  display: flex;
+  // gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background-color: $color-white;
+  border: 1px solid $color-gray200;
+  border-radius: 12px;
+  padding: 24px;
+  font-family: 'Inter', sans-serif;
+  p {
+    text-align: left;
+  }
+  ul {
+    margin-bottom: 9px;
+  }
+  li {
+    text-align: left;
+  }
+  &:nth-child(n + 1) {
+    b {
+      margin-top: 9px;
+    }
+  }
+}

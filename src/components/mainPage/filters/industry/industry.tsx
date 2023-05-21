@@ -1,10 +1,11 @@
 import { Select } from '@mantine/core';
-import { ChevronDown } from 'tabler-icons-react';
+import { ChevronDown, ChevronUp } from 'tabler-icons-react';
 import s from './industry.module.scss';
 import { ICatalog } from '../../../../service/models';
 import { useAppContext } from '../../../../reducer/filtersContext';
 
 import { updateIndustry } from '../../../../reducer/actions';
+import { useState } from 'react';
 
 function IndustryBlock(props: { catalog: ICatalog[] }) {
   const { state, dispatch } = useAppContext();
@@ -12,16 +13,28 @@ function IndustryBlock(props: { catalog: ICatalog[] }) {
     value: String(el.key),
     label: el.title_rus,
   }));
+  const [isOpened, setIsOpened] = useState<boolean>(false);
 
   return (
     <div className={s.industry}>
-      <span>Отрасль</span>
+      <span className={s.title}>Отрасль</span>
       <Select
-        rightSection={<ChevronDown size="1rem" />}
+        rightSection={
+          isOpened ? (
+            <ChevronUp size="1.5rem" color="rgb(94, 150, 252)" />
+          ) : (
+            <ChevronDown size="1.5rem" color="rgb(172, 173, 185)" />
+          )
+        }
         data={selectData}
-        styles={{ rightSection: { pointerEvents: 'none' } }}
+        placeholder="Выберите отрасль"
+        classNames={{ input: s.input, rightSection: s.rightSec, item: s.item }}
+        // size="md"
+        // styles={{ rightSection: { pointerEvents: 'none' }, item: { whiteSpace: 'initial' } }}
         onChange={(e) => dispatch(updateIndustry(e || ''))}
-        value={state.industry}
+        onDropdownOpen={() => setIsOpened(true)}
+        onDropdownClose={() => setIsOpened(false)}
+        value={state.filtersState.industry}
       />
     </div>
   );

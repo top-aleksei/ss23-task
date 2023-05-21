@@ -1,4 +1,4 @@
-import { filterReducer } from './reducer';
+import { appReducer } from './reducer';
 
 import { createContext, useReducer, useContext } from 'react';
 
@@ -7,15 +7,24 @@ const TodoContext = createContext();
 
 // начальное состояние
 const initialState = {
-  salaryFrom: '',
-  salaryTo: '',
-  industry: '',
-  searchWord: '',
+  filtersState: {
+    salaryFrom: '',
+    salaryTo: '',
+    industry: '',
+    searchWord: '',
+    page: 1,
+  },
+  vacanciesState: {
+    objects: [],
+    total: 0,
+  },
+  favoriteState: [],
+  isFetching: true,
 };
 
 // провайдер
 export const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(filterReducer, initialState);
+  const [state, dispatch] = useReducer(appReducer, initialState);
 
   return <TodoContext.Provider value={{ state, dispatch }}>{children}</TodoContext.Provider>;
 };

@@ -1,0 +1,67 @@
+@import '../../../../styles/style.scss';
+
+.item {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background-color: $color-white;
+  border: 1px solid $color-gray200;
+  border-radius: 12px;
+  padding: 23px 24px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  &__header {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    .title {
+      max-width: 92%;
+      @include font(20px, 24px, 600);
+      color: $color-blue500;
+      text-align: left;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__main {
+    @include font(16px, 20x, 400);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    .dot {
+      color: $color-gray600;
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @include font(16px, 19px, 400);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.salary {
+  font-weight: 700;
+}
+
+.location {
+  width: 20px;
+  height: 20px;
+  background: url('../../../../assets/location.svg');
+}
+.star {
+  &-fav {
+    border: none;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    background: url('../../../../assets/starFav.svg') no-repeat;
+  }
+}

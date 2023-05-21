@@ -1,2 +1,35 @@
+@import '../../../../styles/style.scss';
+
 .industry {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  @include font(16px, 19px, 700);
+  text-align: left;
+}
+
+.input {
+  height: 42px;
+  padding-left: 12px;
+  padding-bottom: 5px;
+  &::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(172, 173, 185);
+  }
+}
+
+.rightSec {
+  margin-right: 6px;
+  margin-bottom: 1px;
+}
+
+.item {
+  white-space: initial;
 }

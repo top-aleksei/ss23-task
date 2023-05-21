@@ -7,19 +7,27 @@ import { updateSearchWord } from '../../../reducer/actions';
 function SearchBar() {
   const { state, dispatch } = useAppContext();
 
+  const customStyles = {
+    input: s.custom__input,
+    icon: s.custom__icon,
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateSearchWord(e.target.value));
   };
 
   return (
     <TextInput
-      icon={<IconSearch size="1.1rem" stroke={1.5} />}
-      radius="xl"
-      size="md"
-      rightSection={<button className={s.search__button}>поиск</button>}
-      placeholder="Search questions"
+      icon={<IconSearch size="1.2rem" stroke={1.5} />}
+      classNames={customStyles}
+      rightSection={
+        <button className={s.search__button} onClick={() => console.log(state)}>
+          Поиск
+        </button>
+      }
+      placeholder="Введите название вакансии"
       rightSectionWidth={42}
-      value={state.searchWord || ''}
+      value={state.filtersState.searchWord || ''}
       onChange={(e) => handleChange(e)}
     />
   );

@@ -1,0 +1,37 @@
+@import '../../../styles/style.scss';
+
+.page {
+  width: 327px;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.image {
+  width: 240px;
+  height: 230px;
+  background: url('../../../assets/emptyFav.svg') no-repeat;
+}
+
+.text {
+  width: 100%;
+  @include font(24px, 29px, 700);
+  font-family: 'Inter', sans-serif;
+  color: $color-gray900;
+  letter-spacing: 0.16rem;
+}
+
+.button {
+  padding: 11px 27px 11px 25px;
+  border-radius: 8px;
+  border: none;
+  background-color: $color-blue100;
+  color: $color-blue600;
+  font-family: 'Inter', sans-serif;
+  @include font(14px, 155%, 600);
+  cursor: pointer;
+}

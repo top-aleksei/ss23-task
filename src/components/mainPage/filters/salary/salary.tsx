@@ -6,6 +6,13 @@ import { updateSalaryFrom, updateSalaryTo } from '../../../../reducer/actions';
 function SalaryBlock() {
   const { state, dispatch } = useAppContext();
 
+  const customInputClass = {
+    input: s.custom__input,
+    controlUp: s.custom__up,
+    controlDown: s.custom__down,
+    rightSection: s.custom__rightSection,
+  };
+
   const handleInput = (
     e: React.FormEvent<HTMLInputElement>,
     dispatchFunction: (value: number) => void
@@ -24,19 +31,19 @@ function SalaryBlock() {
 
   return (
     <div className={s.salary}>
-      <span>Оклад</span>
+      <span className={s.title}>Оклад</span>
       <NumberInput
-        styles={{ control: { border: 'none', height: '3px' }, input: { height: '42px' } }}
+        classNames={customInputClass}
         placeholder="От"
-        value={state.salaryFrom}
+        value={state.filtersState.salaryFrom}
         min={0}
         onInput={(e) => handleInput(e, updateSalaryFrom)}
         onChange={(e) => handleChange(e, updateSalaryFrom)}
       />
       <NumberInput
-        styles={{ control: { border: 'none', height: '3px' }, input: { height: '42px' } }}
+        classNames={customInputClass}
         placeholder="До"
-        value={state.salaryTo}
+        value={state.filtersState.salaryTo}
         min={0}
         onInput={(e) => handleInput(e, updateSalaryTo)}
         onChange={(e) => handleChange(e, updateSalaryTo)}
