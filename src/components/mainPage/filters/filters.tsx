@@ -34,7 +34,7 @@ function Filters(props: { catalog: ICatalog[] }) {
 
       <IndustryBlock catalog={props.catalog} />
       <SalaryBlock />
-      <button className={s.filters__button} onClick={getVacancies}>
+      <button className={s.filters__button} onClick={getVacancies} data-elem="search-button">
         Применить
       </button>
     </div>

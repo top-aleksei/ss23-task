@@ -41,6 +41,7 @@ function SalaryBlock() {
           min={0}
           onInput={(e) => handleInput(e, updateSalaryFrom)}
           onChange={(e) => handleChange(e, updateSalaryFrom)}
+          data-elem="salary-from-input"
         />
         <NumberInput
           classNames={customInputClass}
@@ -49,6 +50,7 @@ function SalaryBlock() {
           min={0}
           onInput={(e) => handleInput(e, updateSalaryTo)}
           onChange={(e) => handleChange(e, updateSalaryTo)}
+          data-elem="salary-to-input"
         />
       </div>
     </div>

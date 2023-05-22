@@ -33,6 +33,7 @@
     border: none;
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
+    cursor: pointer;
     @include font(14px, 21px, 500);
     @include media-small-mobile {
       height: 32px;
@@ -52,6 +53,7 @@
     @include font(14px, 20px, 500);
     font-family: 'Inter', sans-serif;
     color: $color-gray500;
+    cursor: pointer;
   }
   &__ico {
     width: 16px;

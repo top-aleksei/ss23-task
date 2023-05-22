@@ -33,6 +33,7 @@ function IndustryBlock(props: { catalog: ICatalog[] }) {
         onDropdownOpen={() => setIsOpened(true)}
         onDropdownClose={() => setIsOpened(false)}
         value={state.filtersState.industry}
+        data-elem="industry-select"
       />
     </div>
   );

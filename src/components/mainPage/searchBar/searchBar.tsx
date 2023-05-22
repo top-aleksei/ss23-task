@@ -37,7 +37,7 @@ function SearchBar() {
         icon={<IconSearch size="1.2rem" stroke={1.5} />}
         classNames={customStyles}
         rightSection={
-          <button className={s.search__button} type="submit">
+          <button className={s.search__button} type="submit" data-elem="search-button">
             Поиск
           </button>
         }
@@ -45,6 +45,7 @@ function SearchBar() {
         rightSectionWidth={42}
         value={state.filtersState.searchWord || ''}
         onChange={(e) => handleChange(e)}
+        data-elem="search-input"
       />
     </form>
   );

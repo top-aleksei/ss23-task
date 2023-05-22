@@ -24,7 +24,7 @@ function VacancyTitle(props: any) {
   };
 
   return (
-    <div className={s.item}>
+    <div className={s.item} data-elem={`vacancy-${item.id}`}>
       <div className={s.item__header}>
         <h2 className={s.title}>
           {item.profession} {item.firm_name}
@@ -33,6 +33,7 @@ function VacancyTitle(props: any) {
         <button
           className={isFavorite ? s['star-fav'] : s.star}
           onClick={hadleToggleFavorite}
+          data-elem={`vacancy-${item.id}-shortlist-button`}
         ></button>
       </div>
       <div className={s.item__main}>

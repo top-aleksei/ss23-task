@@ -21,13 +21,17 @@ function FavItem(props: any) {
   };
 
   return (
-    <div className={s.item} onClick={handleCardClick}>
+    <div className={s.item} onClick={handleCardClick} data-elem={`vacancy-${item.id}`}>
       <div className={s.item__header}>
         <p className={s.title}>
           {item.profession} {item.firm_name}
         </p>
 
-        <button className={s['star-fav']} onClick={(e) => handleFavorite(e)}></button>
+        <button
+          className={s['star-fav']}
+          onClick={(e) => handleFavorite(e)}
+          data-elem={`vacancy-${item.id}-shortlist-button`}
+        ></button>
       </div>
       <div className={s.item__main}>
         <span className={s.salary}>

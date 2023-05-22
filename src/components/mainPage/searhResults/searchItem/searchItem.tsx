@@ -32,7 +32,7 @@ function SearchItem(props: any) {
   };
 
   return (
-    <div className={s.item} onClick={handleCardClick}>
+    <div className={s.item} onClick={handleCardClick} data-elem={`vacancy-${item.id}`}>
       <div className={s.item__header}>
         <p className={s.title}>
           {item.profession} {item.firm_name}
@@ -41,6 +41,7 @@ function SearchItem(props: any) {
         <button
           className={isFavorite ? s['star-fav'] : s.star}
           onClick={(e) => hadleToggleFavorite(e)}
+          data-elem={`vacancy-${item.id}-shortlist-button`}
         ></button>
       </div>
       <div className={s.item__main}>
