@@ -45,8 +45,7 @@ export async function fetchVacancies(
     );
     const vacancies: IFetchedVacancies = await response.json();
     return vacancies;
-  } catch (e) {
-    console.log(e);
+  } catch {
     throw new Error('getting vacancies error');
   }
 }
